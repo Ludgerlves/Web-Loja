@@ -1,5 +1,5 @@
 <?php 
-require_once __DIR__ . '/../controller/AutentController.php';
+require_once (__DIR__ . '/../controller/AutentController.php');
 
 $methodoHTTP= $_SERVER['REQUEST_METHOD'];
 

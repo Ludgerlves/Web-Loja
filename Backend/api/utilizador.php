@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../controller/UtilizadorController.php';
+require_once (__DIR__ . '/../controller/UtilizadorController.php');
 
 header('Content-Type: application/json');
 
