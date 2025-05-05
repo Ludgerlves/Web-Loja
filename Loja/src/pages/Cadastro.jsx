@@ -1,38 +1,35 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-const Cadastro = () => {
-    const[nome, setNome]= useState('');
+const Cadastro = async(userData) => {
+    const[name, setName]= useState('');
     const[email, setEmail]=useState('');
     const[senha, SetSenha]=useState('');
 
-    const HandleRegist=async(e)=>{
-        e.preventDefault();
+    //const HandleRegist=async(e)=>{
+        //e.preventDefault();
 
         try{
-            const resposta= await axios.post('http://localhost:8000/backend/cadastro.php',{
-                nome,
-                email,
-                senha
-            })
+            const resposta= await axios.post('http://localhost:8000/api/utilizador.php', userData);
             if (resposta.data.status==='sucesso') {
                 console.log('Cadastro realizado com sucesso')
+                Cadastro({name:setName, email:setEmail, senha:SetSenha});
             }else{
-                console.log('Credenciais invalidas')
+                console.log('Credenciais inválidas')
             }
         }
         catch(erro){
             console.log('Erro ao conectar com o servidor', erro);
         }
-    }
+    //}
   return (
     <div style={estilo.container}>
         <h1>Cadastro</h1>
         <form onSubmit={HandleRegist} style={estilo.form}>
             <input type="text" 
             placeholder="Nome"
-            value={nome}
-            onChange={e => setNome(e.target.value)}
+            value={name}
+            onChange={e => setName(e.target.value)}
             required
             style={estilo.input}
             />

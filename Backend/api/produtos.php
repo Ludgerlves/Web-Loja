@@ -1,5 +1,5 @@
 <?php 
-require_once (__DIR__ .'/../controller/ProdutosController.php');
+require_once __DIR__ .'/../controller/ProdutosController.php';
 
 $metodoHTTP=$_SERVER['REQUEST_METHOD'];
 

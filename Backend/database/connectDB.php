@@ -1,6 +1,4 @@
 <?php 
-
-
 try {
     $dbPath = __DIR__.'/database.db';
 
