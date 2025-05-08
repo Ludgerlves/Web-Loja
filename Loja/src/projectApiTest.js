@@ -10,4 +10,4 @@ const createUser=async (userData)=>{
     }
 };
 
-createUser({name: 'Maria', email:'Maria@example.com', password:'123456'});
+createUser({name: 'Maria', email:'Maia@example.com', password:'123456'});
