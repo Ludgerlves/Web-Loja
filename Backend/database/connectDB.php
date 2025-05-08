@@ -13,7 +13,7 @@ try {
     $pdo = new PDO('sqlite:' . $dbPath);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('PRAGMA foreign_keys = ON;');
-    echo "Conexão PDO bem-sucedida!";
+    //echo "Conexão PDO bem-sucedida!";
 } catch (PDOException $erro) {
     error_log("Erro ao conectar ao banco de dados: " . $erro->getMessage());
     die("Erro ao conectar ao banco de dados. Tente novamente mais tarde.");
