@@ -28,15 +28,10 @@ const Cadastro = () => {
             const resposta = await axios.post('http://localhost:8000/api/utilizador.php', userData);
             if (resposta.data.status === 'sucesso') {
                 setSuccess(true);
-                // Limpa os campos
                 setName('');
                 setEmail('');
                 setSenha('');
-                
-                // Redireciona após 2 segundos (para mostrar mensagem de sucesso)
-                setTimeout(() => {
-                    navigate('/', { replace: true }); // Redireciona para a página inicial
-                }, 2000);
+                navigate('/', { replace: true }); // Redireciona para a página inicial
             } else {
                 setError(resposta.data.message || 'Credenciais inválidas');
             }
